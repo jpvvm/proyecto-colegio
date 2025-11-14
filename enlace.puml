@@ -1,0 +1,37 @@
+@startuml enlace 
+state Aplicacion{       /' Para comentarios'/
+
+state docente{                /' Los registros específicos'/
+
+}
+
+state Todos{
+
+}
+
+state Registros{        
+
+}
+
+state caja{
+
+}
+
+state Registros: estudiantes\nProfesores         /' registro de estudiantes y registro de profesores. "\n" es para hacer salto de linea'/
+state docente: registro\nnotas
+
+
+/' Ponemos los actores: Administracion, Secretaria, Profesores '/
+
+Administracion --> Todos             
+Secretaria --> Registros
+Secretaria --> caja
+profesor --> docente
+Secretaria --> docente
+
+
+
+
+}
+
+@enduml

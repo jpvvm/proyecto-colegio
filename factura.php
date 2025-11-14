@@ -169,10 +169,14 @@
                 name="curso1"
                 id=""
             >
+
+        <!-- ========== SUPER IMPORTANTE LOS value="1", value="2", value="3" ========== -->
+
+
                 <option selected>Seleccione el curso</option>
-                <option value="">PHP</option>
-                <option value="">PYTHON</option>
-                <option value="">JAVA</option>
+                <option value="1">PHP</option>
+                <option value="2">PYTHON</option>
+                <option value="3">JAVA</option>
             </select>
         </div>
         

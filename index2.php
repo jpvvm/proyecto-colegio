@@ -30,41 +30,47 @@
         >
             <img class="card-img-top" src="holder.js/100px180/" alt="Title" />
             <div class="card-body">
-                <!-- bs5-input -->
+
+                <!-- Hacemos un formulario pero cambiamos el "action" por "name" -->
+
+                <form name="login" method="post">
+                <!-- bs5-input. Se le añade "value" -->
                 <div class="mb-3">
                     <label for="" class="form-label">USUARIO</label>
                     <input
                         type="text"
                         class="form-control"
-                        name=""
+                        name="usuario"
                         id=""
                         aria-describedby="helpId"
                         placeholder=""
                         style="width: 300px"
+                        value=""
 
                     />
-                    <small id="helpId" class="form-text text-muted">Help text</small>
+                    
                 </div>
                 <br>
                 <!-- bs5-input -->
                  <div class="mb-3">
                     <label for="" class="form-label">CONTRASEÑA</label>
                     <input
-                        type="text"
+                        type="password" 
                         class="form-control"
-                        name=""
+                        name="password"
                         id=""
                         aria-describedby="helpId"
                         placeholder=""
                         style="width: 300px"
+                        value=""
                     />
-                    <small id="helpId" class="form-text text-muted">Help text</small>
+                    
                  </div>
                  <br>
                  <!-- button -->
-                  <button class="btn btn-danger">Entrar</button>
+                  <button type="button" class="btn btn-danger" onclick="Login()">Entrar</button>        <!--- IMPORTANTÍSIMO PONER "type=button" o no hace bien el login-->
 
-
+                </form>
 
 
 
@@ -72,8 +78,35 @@
 
             </div>
         </div>
-        
 
+        <!-- Hacemos el script para crear el evento. Este Login con mayúscula es el evento. NO confundir con "login" que es el name= del form de arriba-->
+        
+        <script>
+
+        function Login(){
+
+        var usuario = document.login.usuario.value;
+        var password = document.login.password.value;
+
+        if (usuario=="adm" && password=="123"){
+            window.location="inicio.php";            // Como es el usuario ADMINISTRADOR. Va a "inicio.php"
+        }
+
+        else if (usuario=="secre" && password=="123"){
+            window.location="inicio2.php";            // Como es el usuario SECRETARIA. Va a "inicio2.php"
+        }
+
+        else if (usuario=="prof" && password=="123"){
+            window.location="inicio3.php";            // Como es el usuario PROFESOR. Va a "inicio3.php"
+        }
+        
+        else{
+            alert("Usuario no autorizado");
+        }
+
+        }    
+
+        </script>
 
 
 
